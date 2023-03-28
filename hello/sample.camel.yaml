@@ -4,7 +4,7 @@
       uri: platform-http:/api/hello
       id: from-9767
       parameters:
-        httpMethodRestrict: GET
+        httpMethodRestrict: GET,POST
       steps:
         - log:
             message: ${body}
