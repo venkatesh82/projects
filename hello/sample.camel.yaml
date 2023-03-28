@@ -1,23 +1,12 @@
 - route:
-    id: route-7325
+    id: route-1cc4
     from:
-      uri: jetty:http://localhost:9112/api/hello
-      id: from-4169
+      uri: platform-http:/api/hello
+      id: from-9767
       parameters:
         httpMethodRestrict: GET
       steps:
-        - to:
-            uri: direct:get-response
-            id: to-8e54
-- route:
-    id: get-response
-    from:
-      uri: direct:get-response
-      id: from-2394
-      steps:
-        - setBody:
-            id: setBody-99e6
-            expression:
-              constant:
-                expression: Hello!! Venkat!!
-                id: constant-9710
+        - log:
+            message: ${body}
+            id: log-7a59
+            logName: hello
