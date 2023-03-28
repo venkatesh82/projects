@@ -1,13 +1,23 @@
 - route:
-    id: route-91c9
+    id: route-7325
     from:
-      uri: netty-http:http://0.0.0.0:8080/hello
-      id: from-69c1
+      uri: jetty:http://localhost:8080/api/hello
+      id: from-4169
       parameters:
-        bridgeEndpoint: true
-        sync: true
+        httpMethodRestrict: GET
       steps:
-        - log:
-            message: ${body}
-            id: log-66e5
-            logName: hello
+        - to:
+            uri: direct:get-response
+            id: to-8e54
+- route:
+    id: get-response
+    from:
+      uri: direct:get-response
+      id: from-2394
+      steps:
+        - setBody:
+            id: setBody-99e6
+            expression:
+              constant:
+                expression: Hello!! Venkat!!
+                id: constant-9710
