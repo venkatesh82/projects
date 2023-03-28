@@ -1,0 +1,13 @@
+- route:
+    id: route-91c9
+    from:
+      uri: netty-http:http://0.0.0.0:8080/hello
+      id: from-69c1
+      parameters:
+        bridgeEndpoint: true
+        sync: true
+      steps:
+        - log:
+            message: ${body}
+            id: log-66e5
+            logName: hello
