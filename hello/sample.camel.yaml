@@ -1,7 +1,7 @@
 - route:
     id: route-7325
     from:
-      uri: jetty:http://localhost:8080/api/hello
+      uri: jetty:http://localhost:9112/api/hello
       id: from-4169
       parameters:
         httpMethodRestrict: GET
