@@ -1,0 +1,13 @@
+- route:
+    id: route-f815
+    from:
+      uri: platform-http:/api/hello
+      id: from-cbf5
+      parameters:
+        httpMethodRestrict: GET,POST
+      steps:
+        - log:
+            message: ${body}
+            id: log-4c55
+            logName: sample
+    trace: true
